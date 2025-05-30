@@ -141,71 +141,72 @@ section {
   text-decoration: none;
   font-weight: bold;
 }
-.automation-section .automation-image {
+.automation-section .image-container {
   height: 400px;
   position: relative;
 }
-.automation-section .automation-image img {
+.automation-section .image-container img {
   max-width: 280px;
   border-radius: 12px;
 }
-.automation-section .automation-image img .auto_runtime {
+.automation-section .image-container img #runtime {
   top: 0;
   left: 0;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-.automation-section .automation-image img .ai_bluescreen {
-  margin-top: 3rem;
+.automation-section .image-container img #ai {
+  position: absolute;
+  top: 0;
   bottom: 0;
   right: 0;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .automation-section {
-    flex-direction: row;
-    text-align: left;
+    flex-direction: column;
+    text-align: center;
   }
-  .automation-section .automation-content {
-    flex: 1;
-    padding-right: 2rem;
+  .automation-section .text-container {
+    margin: 0 auto;
+    padding: 1rem;
   }
-  .automation-section .automation-image {
-    flex: 1;
-    margin-top: 0;
+  .automation-section .image-container {
+    margin-top: 2rem;
+  }
+  .automation-section .image-container img {
+    max-width: 100%;
   }
 }
 .achievement-section {
   background: url("/img/UX@2x_3rd.png") center/cover no-repeat, linear-gradient(135deg, #6f42c1, #000c3f);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 12rem;
   justify-content: center;
   color: white;
   padding: 10rem 2rem;
   height: 400px;
 }
-.achievement-section .achievement-content {
+.achievement-section .image-container #rating_img {
   max-width: 600px;
-  text-align: left;
-}
-.achievement-section .achievement-content .achievement-svg {
   width: 320px;
   height: 340px;
-  background: white;
-  padding: 1rem;
+  padding: 0.1rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.achievement-section .achievement-content h2 {
+.achievement-section .text-container {
+  text-align: left;
+}
+.achievement-section .text-container h2 {
   max-width: 350px;
   font-size: 2.5rem;
   height: 1.2;
   margin-bottom: 1.5rem;
   color: #000743;
 }
-.achievement-section .achievement-content p {
+.achievement-section .text-container p {
   max-width: 450px;
   font-size: 0.9rem;
   color: #000743;
@@ -218,18 +219,18 @@ section {
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 4rem 2rem;
-  height: 400px;
+  padding: 0.01rem 1.5rem;
+  height: 515px;
 }
-.journey-section .journey-content {
+.journey-section .text-container {
   max-width: 1000px;
   text-align: center;
 }
-.journey-section .journey-content h1 {
-  font-size: 2rem;
-  margin-bottom: 3rem;
+.journey-section .text-container h1 {
+  max-width: 400px;
+  font-size: 3.5rem;
 }
-.journey-section .journey-content .btn.light {
+.journey-section .text-container .btn.light {
   background-color: #ff3366;
   color: white;
   padding: 0.75rem 1.5rem;
