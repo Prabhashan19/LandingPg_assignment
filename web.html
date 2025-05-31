@@ -2,12 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Creative Team Ideas</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <section class="ideas-section">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">
+          <img src="img/logo.svg" alt="Creative Team Ideas" />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="#success" class="nav-item">Home</a>
+        <a href="#automation" class="nav-item">AI Automation</a>
+        <a href="#achievement" class="nav-item">Testimonials</a>
+        <a href="#journey" class="nav-item">Get Started</a>
+      </div>
+      <div class="auth-buttons">
+        <a href="#" class="login-btn">Log in</a>
+        <a href="#" class="signup-btn">Sign up</a>
+      </div>
+    </nav>
+
+    <section id="success" class="sucess-section">
       <div class="icons-grid">
         <img src="img/slack.svg" alt="slack logo" class="icon-svg" />
         <img src="img/microsoft.svg" alt="microsoft logo" class="icon-svg" />
@@ -29,7 +48,7 @@
         <img src="img/cyber6.svg" alt="cybersix logo" class="icon-svg" />
       </div>
 
-      <div class="text-center">
+      <div class="text-container">
         <h1>Ideas Galore for Your Creative Team</h1>
         <p>Leverage our curated tools or build custom integrations</p>
         <a href="#" class="btn"
@@ -39,28 +58,24 @@
       </div>
     </section>
 
-    <section class="automation-section">
+    <section id="automation" class="automation-section">
       <div class="text-container">
-        <h2>AI Automation: <br />Elevating Team Efficiency and Scalability</h2>
+        <h1>AI Automation: <br />Elevating Team Efficiency and Scalability</h1>
         <a href="#" class="btn light"
           >Get Your Free Guide
           <img src="img/arrow.svg" alt="arrow" style="padding-left: 5px"
         /></a>
       </div>
-      <!-- <div class="image-container">
-        <img src="img/auto_runtime.svg" alt="image of tablet" id="runtime" />
-        <img src="img/ai_bluescreen.svg" alt="AI Guide" id="ai" />
-      </div> -->
     </section>
 
-    <section class="achievement-section">
+    <section id="achievement" class="achievement-section">
       <div class="image-container">
-        <img src="img/rating.svg" alt="achievement icon" id="rating_img" />
         <img src="img/left_arrow.svg" alt="left arrow" id="left_arrow" />
+        <img src="img/rating.svg" alt="achievement icon" id="rating_img" />
         <img src="img/right_arrow.svg" alt="right arrow" id="right_arrow" />
       </div>
       <div class="text-container">
-        <h2>Top-Ranked Collaboration Tool</h2>
+        <h1>Top-Ranked Collaboration Tool</h1>
         <p>
           "As a developer using this platform, I'm impressed. Building workflows
           with the ready-made components made the product immediately valuable."
@@ -68,11 +83,117 @@
       </div>
     </section>
 
-    <section class="journey-section">
+    <section id="journey" class="journey-section">
       <div class="text-container">
         <h1>Eager to Begin Your Journey?</h1>
         <a href="#" class="btn light">Let's Connect</a>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Company</h3>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <a href="#automation">AI Automation</a>
+          <a href="#">Tutorials</a>
+          <a href="#achievement">Testimonials</a>
+        </div>
+        <div class="footer-column">
+          <h3>Legal</h3>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <div class="social-icons">
+            <a href="#"><img src="img/icons8-twitter.svg" alt="Twitter" /></a>
+            <a href="#"><img src="img/icons8-linkedin.svg" alt="LinkedIn" /></a>
+            <a href="#"><img src="img/icons8-facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="img/icons8-instagram.svg" alt="Instagram" /></a>
+          </div>
+          <p>Subscribe to our newsletter</p>
+          <div class="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Creative Team Ideas. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Smooth scroll behavior script -->
+    <script>
+      // Enhanced smooth scroll with mobile optimization
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Mobile menu toggle (if you want to add hamburger menu)
+      function addMobileMenu() {
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelector('.nav-links');
+        
+        // Create hamburger button
+        const hamburger = document.createElement('button');
+        hamburger.className = 'hamburger';
+        hamburger.innerHTML = '☰';
+        hamburger.style.display = 'none';
+        hamburger.style.background = 'none';
+        hamburger.style.border = 'none';
+        hamburger.style.fontSize = '1.5rem';
+        hamburger.style.cursor = 'pointer';
+        
+        // Insert hamburger button
+        navbar.insertBefore(hamburger, navLinks);
+        
+        // Toggle functionality
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('mobile-open');
+        });
+        
+        // Show/hide hamburger based on screen size
+        function toggleHamburger() {
+          if (window.innerWidth <= 768) {
+            hamburger.style.display = 'block';
+            navLinks.style.display = navLinks.classList.contains('mobile-open') ? 'flex' : 'none';
+          } else {
+            hamburger.style.display = 'none';
+            navLinks.style.display = 'flex';
+            navLinks.classList.remove('mobile-open');
+          }
+        }
+        
+        window.addEventListener('resize', toggleHamburger);
+        toggleHamburger(); // Initial call
+      }
+      
+      // Uncomment the line below if you want the hamburger menu
+      // addMobileMenu();
+    </script>
   </body>
 </html>
