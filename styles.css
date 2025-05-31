@@ -402,7 +402,6 @@ section {
 .automation-section {
   background: url("/img/free_guide.png") center/cover no-repeat;
   display: flex;
-  flex-direction: column;
   align-items: center;
   color: #ffffff;
   padding: 1rem 2rem;
@@ -417,6 +416,18 @@ section {
   max-width: 500px;
   margin-bottom: 3rem;
   color: #ffffff;
+}
+@media (max-width: 768px) {
+  .automation-section .text-container h1 {
+    max-width: 280px;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .automation-section .text-container h1 {
+    max-width: 250px;
+    font-size: 1.5rem;
+  }
 }
 .automation-section .text-container .btn.light {
   background-color: #a86db7;
@@ -449,7 +460,6 @@ section {
 
 @media (max-width: 768px) {
   .automation-section {
-    flex-direction: column;
     text-align: center;
   }
   .automation-section .text-container {
@@ -497,10 +507,49 @@ section {
   padding: 5rem 2rem;
   height: 400px;
 }
+@media (max-width: 768px) {
+  .achievement-section {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: auto;
+    padding: 3rem 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .achievement-section {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+}
 .achievement-section .image-container {
   gap: 2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .achievement-section .image-container {
+    max-width: 280px;
+    font-size: 2rem;
+    gap: 2rem;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .achievement-section .image-container {
+    max-width: 250px;
+    font-size: 1.5rem;
+    gap: 1.5rem;
+    justify-content: center;
+  }
 }
 .achievement-section .image-container #rating_img {
   max-width: 600px;
@@ -508,7 +557,19 @@ section {
   height: 340px;
   padding: 0.1rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1019607843);
+}
+@media (max-width: 768px) {
+  .achievement-section .image-container #rating_img {
+    width: 280px;
+    height: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .achievement-section .image-container #rating_img {
+    width: 250px;
+    height: 270px;
+  }
 }
 .achievement-section .image-container #left_arrow,
 .achievement-section .image-container #right_arrow {
@@ -520,19 +581,67 @@ section {
   transform: scale(1.1);
   transition: transform 0.2s ease;
 }
+@media (max-width: 768px) {
+  .achievement-section .image-container #left_arrow,
+  .achievement-section .image-container #right_arrow {
+    width: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .achievement-section .image-container #left_arrow,
+  .achievement-section .image-container #right_arrow {
+    width: 18px;
+  }
+}
 .achievement-section .text-container {
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .achievement-section .text-container {
+    text-align: center;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .achievement-section .text-container {
+    text-align: center;
+    align-items: center;
+  }
+}
 .achievement-section .text-container h1 {
   max-width: 350px;
   color: #000743;
   margin-bottom: 0;
 }
+@media (max-width: 768px) {
+  .achievement-section .text-container h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .achievement-section .text-container h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
 .achievement-section .text-container p {
   max-width: 450px;
+}
+@media (max-width: 768px) {
+  .achievement-section .text-container p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .achievement-section .text-container p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
 }
 
 .journey-section {
