@@ -29,8 +29,8 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.9490196078);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.0509803922);
   position: fixed;
   top: 0;
   left: 0;
@@ -50,9 +50,10 @@ section {
 .navbar .nav-links {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 .navbar .nav-links .nav-item {
-  color: #333;
+  color: #333333;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 0;
@@ -81,7 +82,7 @@ section {
   gap: 1rem;
 }
 .navbar .auth-buttons .login-btn {
-  color: #333;
+  color: #333333;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -461,40 +462,230 @@ section {
 @media (max-width: 768px) {
   .automation-section {
     text-align: center;
+    padding: 3rem 1rem;
   }
   .automation-section .text-container {
     margin: 0 auto;
     padding: 1rem;
+    max-width: 90%;
+  }
+  .automation-section .text-container h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .automation-section .text-container .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
   }
   .automation-section .image-container {
     margin-top: 2rem;
   }
   .automation-section .image-container img {
     max-width: 100%;
+    height: auto;
   }
   .navbar {
     padding: 0.8rem 1rem;
+    flex-wrap: wrap;
+  }
+  .navbar .hamburger {
+    display: block;
+    order: 2;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .navbar .hamburger:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .navbar .logo {
+    order: 1;
+    flex: 1;
+  }
+  .navbar .logo img {
+    height: 25px;
   }
   .navbar .nav-links {
-    display: none;
+    order: 4;
+    width: 100%;
     flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    gap: 0;
+    display: none;
+    margin-top: 0.5rem;
+  }
+  .navbar .nav-links.mobile-open {
+    display: flex;
+  }
+  .navbar .nav-links .nav-item {
+    padding: 0.8rem 1rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+  }
+  .navbar .nav-links .nav-item:last-child {
+    border-bottom: none;
+  }
+  .navbar .nav-links .nav-item::after {
+    display: none;
+  }
+  .navbar .nav-links .nav-item:hover, .navbar .nav-links .nav-item.active {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .navbar .auth-buttons {
+    order: 3;
+    gap: 0.5rem;
   }
   .navbar .auth-buttons .login-btn {
     display: none;
+  }
+  .navbar .auth-buttons .signup-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+  }
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+  .footer .footer-content {
+    flex-direction: column;
+    gap: 2rem;
   }
   .footer .footer-column {
     flex: 100%;
     text-align: center;
   }
+  .footer .footer-column h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .footer .footer-column a {
+    display: block;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+  }
   .footer .footer-column .social-icons {
     justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .footer .footer-column .social-icons a img {
+    width: 24px;
+    height: 24px;
   }
   .footer .footer-column .newsletter {
+    flex-direction: column;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 1rem auto 0;
+    gap: 0.8rem;
+  }
+  .footer .footer-column .newsletter input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+  .footer .footer-column .newsletter input:focus {
+    border-color: #f92672;
+    outline: none;
+  }
+  .footer .footer-column .newsletter button {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #f92672;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  .footer .footer-column .newsletter button:hover {
+    background-color: #e60657;
+  }
+  .footer .footer-column p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+  .footer .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .footer .footer-bottom p {
+    font-size: 0.8rem;
+    color: #666;
   }
   body {
-    padding-top: 60px;
+    padding-top: 70px;
+  }
+}
+@media (max-width: 480px) {
+  .automation-section {
+    padding: 2rem 0.5rem;
+  }
+  .automation-section .text-container {
+    padding: 0.5rem;
+  }
+  .automation-section .text-container h1 {
+    font-size: 1.6rem;
+  }
+  .automation-section .text-container .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .navbar {
+    padding: 0.6rem 0.8rem;
+  }
+  .navbar .hamburger {
+    font-size: 1.3rem;
+    padding: 0.3rem;
+  }
+  .navbar .auth-buttons .signup-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  .navbar .nav-links .nav-item {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .footer {
+    padding: 1.5rem 0.5rem 1rem;
+  }
+  .footer .footer-column .newsletter {
+    max-width: 280px;
+    gap: 0.6rem;
+  }
+  .footer .footer-column .newsletter input {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+  .footer .footer-column .newsletter button {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+  .footer .footer-column .social-icons a img {
+    width: 20px;
+    height: 20px;
+  }
+  body {
+    padding-top: 65px;
   }
 }
 .achievement-section {
