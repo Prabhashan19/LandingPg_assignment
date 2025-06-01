@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <title>Creative Team Ideas</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -133,7 +136,73 @@
       </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="web.js"></script>
+    <!-- Smooth scroll behavior script -->
+    <script>
+      // Enhanced smooth scroll with mobile optimization
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            const navbarHeight = document.querySelector(".navbar").offsetHeight;
+            const targetPosition =
+              targetElement.getBoundingClientRect().top +
+              window.pageYOffset -
+              navbarHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Mobile menu toggle (if you want to add hamburger menu)
+      function addMobileMenu() {
+        const navbar = document.querySelector(".navbar");
+        const navLinks = document.querySelector(".nav-links");
+
+        // Create hamburger button
+        const hamburger = document.createElement("button");
+        hamburger.className = "hamburger";
+        hamburger.innerHTML = "☰";
+        hamburger.style.display = "none";
+        hamburger.style.background = "none";
+        hamburger.style.border = "none";
+        hamburger.style.fontSize = "1.5rem";
+        hamburger.style.cursor = "pointer";
+
+        // Insert hamburger button
+        navbar.insertBefore(hamburger, navLinks);
+
+        // Toggle functionality
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("mobile-open");
+        });
+
+        // Show/hide hamburger based on screen size
+        function toggleHamburger() {
+          if (window.innerWidth <= 768) {
+            hamburger.style.display = "block";
+            navLinks.style.display = navLinks.classList.contains("mobile-open")
+              ? "flex"
+              : "none";
+          } else {
+            hamburger.style.display = "none";
+            navLinks.style.display = "flex";
+            navLinks.classList.remove("mobile-open");
+          }
+        }
+
+        window.addEventListener("resize", toggleHamburger);
+        toggleHamburger(); // Initial call
+      }
+
+      addMobileMenu();
+    </script>
   </body>
 </html>
