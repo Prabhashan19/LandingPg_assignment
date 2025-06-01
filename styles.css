@@ -387,6 +387,9 @@ section {
   z-index: 10;
   position: relative;
 }
+.sucess-section .btn:hover {
+  background-color: #e60657;
+}
 @media (max-width: 768px) {
   .sucess-section .btn {
     padding: 10px 10px;
@@ -437,6 +440,9 @@ section {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+}
+.automation-section .text-container .btn.light:hover {
+  background-color: #9150a1;
 }
 .automation-section .image-container {
   height: 400px;
@@ -862,6 +868,9 @@ section {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+}
+.journey-section .text-container .btn.light:hover {
+  background-color: #e60657;
 }
 
 @media (min-width: 768px) {
