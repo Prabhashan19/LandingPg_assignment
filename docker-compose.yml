@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nginx-website:
+    build: .
+    container_name: eight25-internship-website
+    ports:
+      - "3000:80"  # Map host port 3000 to container port 80
+    volumes:
+      - ./website:/var/www/html  # Sync website files from host to container
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
